@@ -10,13 +10,18 @@ class porks(object):
     """
     初始化
     """
+
     def __int__(self):
-        self.cards = [[face, suite] for face in "♠♣♦♥"
-                      for suite in ["A", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "K", "Q"]]
+        card = [[face, suite] for face in "♠♣♦♥"
+                       for suite in ["A", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "K", "Q"]]
+        self.cards = card
+
+
 
     def xipai(self):
         random.shuffle(self.cards)
         return self.cards
+
 
 """
 荷官
@@ -36,7 +41,5 @@ class porks(object):
 执行方法
 """
 if __name__ == "__main__":
-    pork = porks()
-    print(pork.cards)
-    # for card in pork:
-    #     print(card, end=" ")
+    p = porks()
+    print(p.xipai())
